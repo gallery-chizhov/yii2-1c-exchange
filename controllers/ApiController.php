@@ -212,7 +212,8 @@ class ApiController extends Controller
         }
         $this->beforeOfferSync();
         foreach ($commerce->offerPackage->getOffers() as $offer) {
-            $product_id = $offer->getClearId();
+//            $product_id = $offer->getClearId();
+            $product_id = $offer->id;
             if ($product = $this->findProductModelById($product_id)) {
                 $model = $product->getOffer1c($offer);
                 $this->parseProductOffer($model, $offer);
